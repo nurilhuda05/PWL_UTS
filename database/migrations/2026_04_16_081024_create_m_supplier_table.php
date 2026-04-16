@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('supplier_nama', 100);
             $table->text('supplier_alamat');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
