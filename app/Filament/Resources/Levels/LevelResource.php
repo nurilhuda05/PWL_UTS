@@ -23,11 +23,9 @@ class LevelResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
 
     protected static ?string $navigationLabel = 'Level';
-
     protected static ?string $pluralLabel = 'Level';
-
     protected static ?string $modelLabel = 'Level';
-
+    protected static ?string $recordTitleAttribute = 'level_nama';
     protected static ?int $navigationSort = 1;
     
     public static function form(Schema $schema): Schema

@@ -14,7 +14,7 @@ class LevelForm
                 TextInput::make('level_kode')
                     ->label('Kode Level')
                     ->required()
-                    ->unique()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(10)
                     ->columnSpanFull(),
                     
