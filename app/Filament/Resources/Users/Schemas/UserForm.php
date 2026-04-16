@@ -25,7 +25,7 @@ class UserForm
                 TextInput::make('username')
                     ->label('Username')
                     ->required()
-                    ->unique()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(20)
                     ->columnSpanFull(),
 
