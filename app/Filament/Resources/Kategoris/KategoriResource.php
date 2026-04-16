@@ -25,6 +25,7 @@ class KategoriResource extends Resource
     protected static ?string $navigationLabel = 'Kategori';
     protected static ?string $pluralLabel = 'Kategori';
     protected static ?string $modelLabel = 'Kategori';
+    protected static ?string $recordTitleAttribute = 'kategori_nama';
     protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
