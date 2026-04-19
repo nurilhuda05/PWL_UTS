@@ -21,9 +21,9 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('supplier_id')->references('supplier_id')->on('m_supplier');
-            $table->foreign('barang_id')->references('barang_id')->on('m_barang');
-            $table->foreign('user_id')->references('user_id')->on('m_user');
+            $table->foreign('supplier_id')->references('supplier_id')->on('m_supplier')->onDelete('CASCADE');
+            $table->foreign('barang_id')->references('barang_id')->on('m_barang')->onDelete('CASCADE');
+            $table->foreign('user_id')->references('user_id')->on('m_user')->onDelete('CASCADE');
         });
     }
 

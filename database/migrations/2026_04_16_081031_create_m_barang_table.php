@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('kategori_id')->references('kategori_id')->on('m_kategori');
+            $table->foreign('kategori_id')->references('kategori_id')->on('m_kategori')->onDelete('CASCADE');
         });
     }
 

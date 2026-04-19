@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('level_id')->references('level_id')->on('m_level');
+            $table->foreign('level_id')->references('level_id')->on('m_level')->onDelete('CASCADE');
         });
     }
 
