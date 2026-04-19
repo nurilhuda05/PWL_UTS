@@ -1,0 +1,38 @@
+/* LIGHT MODE*/
+
+/* warna backround sidebar*/
+.fi-sidebar {
+    background-color: #778DA9 !important;
+}
+/* warna backround top bar*/
+.fi-topbar {
+    background-color: #778DA9!important;
+}
+/* warna text sidebar*/
+.fi-sidebar-item-label {
+    color: black !important;
+}
+/* warna icon sidebar*/
+.fi-sidebar-item-icon {
+    color: black !important;
+} 
+
+
+/* DARK MODE*/
+
+/* warna backround sidebar*/
+.dark .fi-sidebar {
+    background-color: #1B263B !important; 
+}
+/* warna backround top bar*/
+.dark .fi-topbar {
+    background-color: #1B263B !important;
+}
+/* warna text sidebar*/
+.dark .fi-sidebar-item-label {
+    color: white !important;
+}
+/* warna icon sidebar*/
+.dark .fi-sidebar-item-icon {
+    color: white !important;
+} 
