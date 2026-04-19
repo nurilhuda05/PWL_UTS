@@ -94,7 +94,20 @@ class PenjualanForm
                                         ->numeric()
                                         ->minValue(1)
                                         ->default(1)
-                                        ->columnSpan(1),
+                                        ->columnSpan(1)
+                                        ->rules([
+                                            function ($get) {
+                                                return function ($attribute, $value, $fail) use ($get) {
+                                                    $barangId = $get('barang_id');
+                                                    if ($barangId) {
+                                                        $totalStok = \App\Models\StokModel::where('barang_id', $barangId)->sum('stok_jumlah');
+                                                        if ($value > $totalStok) {
+                                                            $fail("Stok tidak cukup! Stok hanya Tersedia: {$totalStok}");
+                                                        }
+                                                    }
+                                                };
+                                            },
+                                        ]),
                                 ])
                                 ->columns(4)
                                 ->addActionLabel('Tambah Barang')

@@ -20,4 +20,9 @@ class EditPenjualan extends EditRecord
             RestoreAction::make(),
         ];
     }
+
+    protected function getFormActions(): array
+    {
+        return [];
+    }
 }
