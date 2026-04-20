@@ -33,7 +33,7 @@ class StokForm
                     ->columnSpanFull(),
 
                 Select::make('user_id')
-                    ->label('User ')
+                    ->label('Staff')
                     ->options(UserModel::pluck('username', 'user_id'))
                     ->required()
                     ->searchable()

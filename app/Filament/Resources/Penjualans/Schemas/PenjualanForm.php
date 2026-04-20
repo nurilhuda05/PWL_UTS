@@ -26,7 +26,7 @@ class PenjualanForm
                         ->icon('heroicon-o-shopping-cart')
                         ->schema([
                             Select::make('user_id')
-                                ->label('Kasir')
+                                ->label('Staff')
                                 ->options(UserModel::pluck('username', 'user_id'))
                                 ->required()
                                 ->searchable()

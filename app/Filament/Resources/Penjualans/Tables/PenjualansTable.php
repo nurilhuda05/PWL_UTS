@@ -35,7 +35,7 @@ class PenjualansTable
                     ->sortable(),
 
                 TextColumn::make('user.username')
-                    ->label('Kasir')
+                    ->label('Staff')
                     ->sortable(),
 
                 TextColumn::make('penjualan_tanggal')
