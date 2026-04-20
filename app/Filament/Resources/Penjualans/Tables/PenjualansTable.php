@@ -47,6 +47,16 @@ class PenjualansTable
                     ->label('Dibuat')
                     ->dateTime('d M Y H:i')
                     ->sortable(),
+
+                TextColumn::make('total_harga')
+                    ->label('Total')
+                    ->money('IDR')
+                    ->state(function ($record) {
+                        // Hitung total dari detail penjualan
+                        return $record->detail->sum(function ($detail) {
+                            return $detail->harga * $detail->jumlah;
+                        });
+                    }),
             ])
             ->filters([
                 TrashedFilter::make(),
