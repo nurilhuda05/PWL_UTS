@@ -23,7 +23,6 @@ class CreatePenjualan extends CreateRecord
             $barangId = $detail->barang_id;
             $jumlahTerjual = $detail->jumlah;
 
-            // Kurangi stok pertama yang ditemukan
             $stok = StokModel::where('barang_id', $barangId)
                 ->where('stok_jumlah', '>', 0)
                 ->first();
