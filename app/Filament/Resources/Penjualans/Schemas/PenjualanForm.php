@@ -13,6 +13,9 @@ use Filament\Schemas\Components\Wizard;
 use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
+use Filament\Actions\Action;
+use App\Models\StokModel;
+
 
 class PenjualanForm
 {
@@ -100,7 +103,7 @@ class PenjualanForm
                                                 return function ($attribute, $value, $fail) use ($get) {
                                                     $barangId = $get('barang_id');
                                                     if ($barangId) {
-                                                        $totalStok = \App\Models\StokModel::where('barang_id', $barangId)->sum('stok_jumlah');
+                                                        $totalStok = StokModel::where('barang_id', $barangId)->sum('stok_jumlah');
                                                         if ($value > $totalStok) {
                                                             $fail("Stok tidak cukup! Stok hanya Tersedia: {$totalStok}");
                                                         }
@@ -118,7 +121,7 @@ class PenjualanForm
                 ])
                     ->columnSpanFull()
                     ->submitAction(
-                        \Filament\Actions\Action::make('save')
+                        Action::make('save')
                             ->label('Simpan Penjualan')
                             ->color('primary')
                             ->submit('save')
