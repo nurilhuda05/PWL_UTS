@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('user_id');
             $table->unsignedBigInteger('level_id')->index();
             $table->string('username', 20)->unique();
+            $table->string('nama_lengkap', 50);
             $table->string('password');
             $table->timestamps();
             $table->softDeletes();

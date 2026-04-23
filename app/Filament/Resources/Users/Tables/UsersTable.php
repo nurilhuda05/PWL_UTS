@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users\Tables;
 
+use Dom\Text;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -31,6 +32,11 @@ class UsersTable
 
                 TextColumn::make('level.level_nama')
                     ->label('Level')
+                    ->sortable(),
+                
+                TextColumn::make('nama_lengkap')
+                    ->label('Nama Lengkap')
+                    ->searchable()
                     ->sortable(),
 
                 TextColumn::make('created_at')
